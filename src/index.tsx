@@ -4,7 +4,10 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'normalize.css';
 import './index.css';
+import Notification from './features/ui/Notification';
+import FloatingSettings from './features/ui/FloatingSettings';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -13,6 +16,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+      <Notification />
+      <FloatingSettings />
     </Provider>
   </React.StrictMode>
 );
