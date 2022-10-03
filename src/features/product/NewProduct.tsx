@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import InputField from '../../components/InputField';
 import ProductActionButton from '../../components/ProductActionButton';
@@ -15,6 +15,7 @@ function NewProduct() {
   const [productQuantity, setProductQuantity] = useState('');
   const [ageRestriction, setAgeRestriction] = useState('');
   const [productImage, setProductImage] = useState<File | null>(null);
+  const imageRef = useRef<HTMLInputElement | null>(null);
   const dispatch = useAppDispatch();
   const [createProduct, { isLoading: isLoadingCreate }] =
     useCreateProductMutation();
@@ -25,6 +26,10 @@ function NewProduct() {
     setProductQuantity('');
     setAgeRestriction('');
     setProductImage(null);
+
+    if (imageRef.current) {
+      imageRef.current.value = '';
+    }
   };
 
   const formFieldsAreFilled = () => {
@@ -94,11 +99,20 @@ function NewProduct() {
   };
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.files, productImage);
     if (!event.target.files) {
       return;
     }
 
-    setProductImage(event.target.files[0]);
+    setProductImage(event.target.files[0] || null);
+  };
+
+  const removeImage = () => {
+    setProductImage(null);
+
+    if (imageRef.current) {
+      imageRef.current.value = '';
+    }
   };
 
   return (
@@ -114,7 +128,7 @@ function NewProduct() {
             type="button"
             className="card-image-remove"
             aria-label="Close"
-            onClick={() => setProductImage(null)}>
+            onClick={removeImage}>
             <svg
               aria-hidden="true"
               className="card-image-remove-icon"
@@ -192,6 +206,7 @@ function NewProduct() {
               id="small-file-input"
               multiple={false}
               onChange={handleImageChange}
+              ref={imageRef}
               className="input-group-file"
             />
           </div>

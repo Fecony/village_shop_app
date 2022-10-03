@@ -16,6 +16,7 @@ function Product() {
     data: products = [],
     isLoading,
     isSuccess,
+    isError,
   } = useGetProductsQuery(age);
 
   useEffect(() => {
@@ -28,10 +29,10 @@ function Product() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess || isError) {
       dispatch(hideNotification());
     }
-  }, [dispatch, isSuccess]);
+  }, [dispatch, isSuccess, isError]);
 
   return (
     <section className="shop-wrapper">
