@@ -99,7 +99,6 @@ function NewProduct() {
   };
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.files, productImage);
     if (!event.target.files) {
       return;
     }
