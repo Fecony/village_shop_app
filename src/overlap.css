@@ -1,0 +1,66 @@
+.overlap {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1f2937;
+  padding: 1rem;
+}
+
+.overlap .container {
+  max-width: 24rem;
+  width: 100%;
+}
+
+.overlap .heading {
+  text-align: center;
+}
+
+.overlap .notice {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: #f3f4f6;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.375rem;
+  border-radius: 0.375rem;
+  margin-bottom: 2rem;
+}
+
+.age-field {
+  display: flex;
+}
+
+.overlap .field {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  border-radius: 0.375rem 0 0 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+.overlap .field + button {
+  font-weight: 600;
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: all 300ms;
+  padding: 0.75rem 1rem;
+  background-color: #0f172a;
+  border: 1px solid transparent;
+  border-radius: 0 0.375rem 0.375rem 0;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.overlap .field + button:hover {
+  background-color: #1e293b;
+}
