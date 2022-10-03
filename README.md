@@ -11,6 +11,8 @@ Village Shop SPA that allows:
 
 Uses React, Redux, Redux Toolkit with RTK Query to simplify API requests with caching
 
+> [Laravel API repository](https://github.com/Fecony/village_shop_api)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes.
@@ -26,19 +28,19 @@ Things you will need:
 Clone the project
 
 ```bash
-  git clone git@github.com:Fecony/village_shop_app.git
+git clone git@github.com:Fecony/village_shop_app.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd village_shop_app
+cd village_shop_app
 ```
 
 Copy .env.example file to .env on the root folder.
 
 ```bash
-  cp .env.example .env
+cp .env.example .env
 ```
 
 Add backend API url to .env file
