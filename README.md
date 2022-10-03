@@ -13,6 +13,8 @@ Uses React, Redux, Redux Toolkit with RTK Query to simplify API requests with ca
 
 > [Laravel API repository](https://github.com/Fecony/village_shop_api)
 
+<img width="869" alt="Screenshot 2022-10-04 at 01 24 33" src="https://user-images.githubusercontent.com/36774784/193696746-d6d3415a-1edd-43fd-a327-c8c60184b1e4.png">
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes.
